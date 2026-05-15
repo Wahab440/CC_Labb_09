@@ -1,16 +1,28 @@
-# React + Vite
+# Task App
+This is a React + Vite task app that uses Supabase for auth and data storage.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Local setup
 
-Currently, two official plugins are available:
+1. Copy [.env.example](.env.example) to [.env.local](.env.local).
+2. Fill in your Supabase project URL and anon key.
+3. Run `npm install` if dependencies are not installed yet.
+4. Start the app with `npm run dev`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Supabase setup
 
-## React Compiler
+1. Create a Supabase project.
+2. Create a `tasks` table that matches the fields used by the app.
+3. Enable Auth providers you want to support, usually email/password.
+4. Add your production URL to the Supabase Auth redirect URLs.
+5. Use the project URL and anon key in your frontend environment variables.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## GitHub and deployment
 
-## Expanding the ESLint configuration
+1. Commit and push this repository to GitHub.
+2. Connect the GitHub repo to your deployment platform of choice, such as Vercel or Netlify, for the frontend.
+3. Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` in the platform environment settings.
+4. Redeploy after changing environment variables.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Production build
+
+Run `npm run build` before deployment to verify the app compiles cleanly.
